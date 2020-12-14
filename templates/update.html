@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+<title>Update</title>
+{% endblock %}
+{% block content %}
+<div class="container bg-light pt-5 pb-5 pl-4 pr-4 mt-5">
+    <h2 class="text-center pb-3">Update Detail</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-6 mb-0">
+                {{ form.first_name|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.last_name|as_crispy_field }}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4 mb-0">
+                {{ form.contact|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-4 mb-0">
+                {{ form.email|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-4 mb-0">
+                   {{ form.dob|as_crispy_field }}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6 mb-0">
+                {{ form.address|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+                {{ form.display_pic|as_crispy_field }}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+{% endblock %}

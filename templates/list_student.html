@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>List of Students</title>
+{% endblock %}
+{% block content %}
+<div class="container-fluid pt-5 mt-3">
+
+    <table class="table table-stripped table-hovered">
+        <thead>
+            <tr>
+                <th>Enrollment_no</th>
+                <th>Name</th>
+                <th>D.O.B.</th>
+                <th>Profile_Picture</th>
+                <th>Contact</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+<!--            {% for users, students in object_list %}-->
+<!--            {% for student in students %}-->
+            <tr>
+                <td>{{ users.username }}</td>
+                <td>{{ users.get_full_name }}</td>
+                <td>{{ students.contact }}</td>
+            </tr>
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+{% endblock %}

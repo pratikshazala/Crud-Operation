@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block list %}
+    <ul class="nav navbar-right">
+        <li class="pr-3"><a href="{% url 'signup' %}">Sign Up</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+    </ul>
+{% endblock %}
+{% block content %}
+<div class="container pt-5">
+    <h4 class="text-center pt-5"> Welcome to this site! </h4>
+    <h5 class="pt-4 pl-4"> Select any organization for your favourite course and then pay fee for it from this site by <a class="text-dark" href="{% url 'signup' %}"><u> Sign up. </u></a></h5>
+    <h5 class="pt-4 pl-4"> And if you have already registered user then please <a class="text-dark" href="{% url 'login' %}"><u> Login </u></a> to your page.</h5>
+    <h5 class="pt-4 pl-4"> For list of Students <a class="text-dark" href="{% url 'list_student' %}"><u>  click here. </u></a></h5>
+</div>
+<div class="fixed-bottom text-right pb-4 pr-3"><u><a href="http://127.0.0.1:8000/admin/login/?next=/admin/">Click here for administration login</a></u>
+
+{% endblock %}

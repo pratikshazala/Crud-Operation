@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Student Detail</title>
+{% endblock %}
+{% block list %}
+    <ul class="nav navbar-right">
+        <li class="pr-3"><a href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+{% endblock %}
+{% block content %}
+<div class="container pt-5">
+    <h5 class="text-right mt-3 text-secondary">Welcome {{ user.username }}</h5>
+    <div class="container">
+    <form method="POST" action="{% url 'student_detail' %}">
+    {% csrf_token %}
+        <div class="form-group">
+            <div class="row pb-3 pt-5">
+                <div class="col-2 pl-5 pt-2">
+                    <label>Enrollment no</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="username" class="form-control" value="{{ user.username }}" readonly>
+                </div>
+            </div>
+            <div class="row pb-3">
+                <div class="col-2 pl-5 pt-2">
+                    <label>Name</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="name" class="form-control" value="{{ user.get_full_name }}" readonly>
+                </div>
+            </div>
+            <div class="row pb-3">
+                <div class="col-2 pl-5 pt-2">
+                    <label>Email</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="email" class="form-control" value="{{ user.email }}" readonly>
+                </div>
+            </div>
+            <div class="row pb-3">
+                <div class="col-2 pl-5 pt-2">
+                    <label>Contact</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="contact" class="form-control" value="{{ user.student.contact }}" readonly>
+                </div>
+            </div>
+            <div class="row pb-3">
+                <div class="col-2 pl-5 pt-2">
+                    <label>Address</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="address" class="form-control" value="{{ user.student.address }}" readonly>
+                </div>
+            </div>
+            <div class="row pb-3">
+                <div class="col-2 pl-5 pt-2">
+                    <label>Profile Pic</label>
+                </div>
+                <div class="col-10">
+                    <img src="{{ user.student.display_pic.url }}" class="img-responsive" height="100px" width="100px">
+                </div>
+            </div>
+            <div class="row pb-3">
+                <div class="col-2 pl-5 pt-2">
+                    <label>Date of Birth</label>
+                </div>
+                <div class="col-10">
+                    <input type="text" id="dob" class="form-control" value="{{ user.student.dob }}" readonly>
+                </div>
+            </div>
+            <div class="row pb-3">
+                <div class="col-3 offset-3 text-right">
+                    <a class="btn btn-primary mb-2 mt-5" href="{% url 'signup' %}?update=true">Update</a>
+                </div>
+                <div class="col-3">
+                    <button type="submit" id="create_fee" class="form-control btn-primary mb-2 mt-5">Pay Fee</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>
+
+{% endblock %}

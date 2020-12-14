@@ -1,0 +1,16 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+.navbar{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #1c2331;
+    border-radius: 0;
+    border:0;
+}
+.navbar a{
+    color: #ffffff !important;
+}
+#loginview{
+    height: 400px;
+    width: 700px;
+}
